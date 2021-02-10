@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/desaturate.h
+vector
+-
+
+../include/hsv_to_rgb.h
+
+../include/rgb_to_hsv.h
+
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-raster-images/src/desaturate.cpp
+desaturate.h
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-raster-images/src/desaturate.h
+hsv_to_rgb.h
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-raster-images/src/hsv_to_rgb.h
+rgb_to_hsv.h
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-raster-images/src/rgb_to_hsv.h
+cmath
+-
+
