@@ -1,0 +1,4 @@
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-ray-tracing/build/CMakeFiles/rebuild_cache.dir
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-ray-tracing/build/CMakeFiles/edit_cache.dir
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-ray-tracing/build/CMakeFiles/hw2.dir
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-ray-tracing/build/CMakeFiles/raytracing.dir

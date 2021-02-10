@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libhw2.a CMakeFiles/hw2.dir/src/Plane.cpp.o CMakeFiles/hw2.dir/src/Sphere.cpp.o CMakeFiles/hw2.dir/src/Triangle.cpp.o CMakeFiles/hw2.dir/src/TriangleSoup.cpp.o CMakeFiles/hw2.dir/src/first_hit.cpp.o CMakeFiles/hw2.dir/src/viewing_ray.cpp.o CMakeFiles/hw2.dir/src/write_ppm.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libhw2.a

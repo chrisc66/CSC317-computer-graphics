@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/write_ppm.h
+vector
+-
+string
+-
+
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-ray-tracing/src/write_ppm.cpp
+write_ppm.h
+/Users/Zichun.Chong@ibm.com/Desktop/csc317/computer-graphics-ray-tracing/src/write_ppm.h
+fstream
+-
+cassert
+-
+iostream
+-
+
