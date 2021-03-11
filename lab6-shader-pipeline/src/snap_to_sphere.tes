@@ -1,0 +1,50 @@
+// Hint: Crib from your model_view_projection.vs
+// Layout:
+//                                         Indicate that we're dealing with
+//                                         triangles in CCW order and using a
+//                                         sane spacing.
+layout(triangles, equal_spacing, ccw) in;
+// Uniforms
+uniform mat4 view;
+uniform mat4 proj;
+uniform float animation_seconds;
+uniform bool is_moon;
+// Inputs:
+//                    array of 3 3D patch corner positions
+in vec4 pos_es_in[];
+// Outputs:
+//                   projected, view, and model transformed 3D position
+out vec4 pos_fs_in;
+//                        view and model transformed 3D position
+out vec4 view_pos_fs_in;
+//                      view and model transformed 3D normal
+out vec3 normal_fs_in;
+//                      3D position _before_ applying model, view or projection
+//                      transformations (e.g., point on unit sphere)
+out vec3 sphere_fs_in;
+// expects: interpolat, model, 
+void main()
+{
+  /////////////////////////////////////////////////////////////////////////////
+  // Replace with your code 
+  vec4 normal_in = interpolate(gl_TessCoord, normalize(pos_es_in[0]), normalize(pos_es_in[1]), normalize(pos_es_in[2]));
+  normal_fs_in = normalize(normal_in).xyz;
+  sphere_fs_in = normal_fs_in;
+  vec4 normal_fs_in_4d = vec4(normal_fs_in, 1.0);
+
+  if (is_moon) {    
+      mat4 moon_model = model(is_moon, animation_seconds/4);  // model with rotation frequency of 1 revolution per 4 sec
+      mat4 scale_matrix = uniform_scale(0.3); // shrink model by 70%
+      mat4 translate_matrix = translate(vec3(2,0,0)); // shift 2 units away
+      view_pos_fs_in = view * moon_model * translate_matrix * scale_matrix * normal_fs_in_4d;
+  }
+  else {
+      view_pos_fs_in = view * normal_fs_in_4d;
+  }
+
+  pos_fs_in = proj * view_pos_fs_in ;
+  gl_Position = pos_fs_in;
+  /////////////////////////////////////////////////////////////////////////////
+}
+
+

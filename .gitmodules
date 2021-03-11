@@ -1,3 +1,6 @@
 [submodule "lab5-meshes/libigl"]
 	path = lab5-meshes/libigl
 	url = git@github.com:libigl/libigl.git
+[submodule "lab6-shader-pipeline/eigen"]
+	path = lab6-shader-pipeline/eigen
+	url = git@github.com:eigenteam/eigen-git-mirror.git
