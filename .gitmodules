@@ -1,0 +1,3 @@
+[submodule "lab5-meshes/libigl"]
+	path = lab5-meshes/libigl
+	url = git@github.com:libigl/libigl.git
