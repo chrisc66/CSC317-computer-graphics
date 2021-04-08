@@ -1,0 +1,33 @@
+This assignment re-uses assignment 5 meshes. I noticed that image processing takes a huge 
+amount of CPU resources and can be very slow. In this assignment, I focused on runtime 
+optimizations. The general idea is improving code efficiency and multi-threading. 
+
+This assignment contains the following changes. 
+- Most of the files are re-written for better compiler / instruction level / control flow 
+optimizations.
+- "catmull_clark" runs as the top level function, modified this file so that it runs as 
+multiple threads. 
+- "catmull_clark" uses multi-threading to for parallel computing within loops, and uses mutex 
+locks when accessing shared resources. 
+- Performed some testing using the rubber duck object (bob.obj) and a newly added object 
+(humanoid_quad.obj) from the internet. 
+
+Results / Outcomes:
+This assignment does not have any visual results, no figures nor animations. The code is 
+functional, and there is significant performance improvement as well. 
+- Before optimization: program takes 100% CPU maximum
+- After optimization: program takes almost 300% CPU maximum. 
+- Before optimization: I can only apply catmull_clark operations on rubber duck object file 
+three times, until everything becomes laggy and next operation takes forever. 
+- After optimization: I can apply five catmull_clark operations, there is significant slowdown 
+on the sixth catmull_clark.
+
+Blockers / Limitations: 
+- First, the libigl library does not support multi-threading, which makes it impossible to get 
+library level support.
+- Second, there are many shared resources (matrixes) and long critical regions in the code. Even 
+if lots of threads are created and executing in parallel, lots of threads are actually waiting on 
+mutex locks.
+- Third, context switch overhead becomes large since lots of threads are created but not actually 
+executing in parallel, they spend lot of time waiting for resources and still requires context 
+switch overhead. 
